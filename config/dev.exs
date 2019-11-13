@@ -61,7 +61,8 @@ config :jalka2020, Jalka2020Web.Endpoint,
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
       ~r"lib/jalka2020_web/{live,views}/.*(ex)$",
-      ~r"lib/jalka2020_web/templates/.*(eex)$"
+      ~r"lib/jalka2020_web/templates/.*(eex)$",
+      ~r{lib/my_app_web/live/.*(ex)$}
     ]
   ]
 

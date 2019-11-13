@@ -1,6 +1,8 @@
 defmodule Jalka2020Web.Endpoint do
   use Phoenix.Endpoint, otp_app: :jalka2020
 
+  socket "/live", Phoenix.LiveView.Socket
+
   socket "/socket", Jalka2020Web.UserSocket,
     websocket: true,
     longpoll: false

@@ -15,7 +15,10 @@ config :jalka2020, Jalka2020Web.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "1MzfSlk4vnjXjsV6teHsRDbCT9aLIjHKuPqmUzoTTUQKG3UmkdHyA7467pNNo6Pn",
   render_errors: [view: Jalka2020Web.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Jalka2020.PubSub, adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: Jalka2020.PubSub, adapter: Phoenix.PubSub.PG2],
+  live_view: [
+    signing_salt: "HJDvyyq9NJMoJXYoWoJXtdlnkGWy3EbFfP9trEuDMo6tm7UimVnF+tTl03YyymTH"
+  ]
 
 # Configures Elixir's Logger
 config :logger, :console,
@@ -24,6 +27,9 @@ config :logger, :console,
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
+
+config :phoenix,
+  template_engines: [leex: Phoenix.LiveView.Engine]
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
