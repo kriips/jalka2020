@@ -17,7 +17,11 @@ defmodule Jalka2020Web.Router do
   scope "/", Jalka2020Web do
     pipe_through :browser
 
-    get "/", PageController, :index
+    live "/", UserLive.Index
+    live "/users", UserLive.Index
+    live "/users/new", UserLive.New
+    live "/users/:id", UserLive.Show
+    live "/users/:id/edit", UserLive.Edit
   end
 
   # Other scopes may use custom stacks.

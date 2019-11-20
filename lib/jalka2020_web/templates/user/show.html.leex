@@ -1,0 +1,13 @@
+<h1>Show User</h1>
+
+<ul>
+
+	<li>
+		<strong>Name:</strong>
+		<%= @user.name %>
+	</li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.live_path(@socket, UserLive.Edit, @user) %></span>
+<span><%= link "Back", to: Routes.live_path(@socket, UserLive.Index) %></span>
